@@ -16,12 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        APIClient.getMoviesAPI2(completion: {(json) in
-                if let a = json {
-                    return
-                }
-            }
-        )
+        
         return true
     }
 

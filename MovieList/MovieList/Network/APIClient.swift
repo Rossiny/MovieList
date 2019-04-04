@@ -36,7 +36,7 @@ class APIClient {
         dataTask.resume()
     }
     
-    static func getMoviesAPI2(completion: @escaping (MoviesJSON?) -> Void) {
+    static func getMoviesAPI2(completion: @escaping ([Movie]) -> Void) {
         Alamofire.request("https://sky-exercise.herokuapp.com/api/Movies")
             .response { response in
                 print(response)
@@ -59,6 +59,7 @@ class APIClient {
                     
                     //using the array to put values
                     let mvs = try! decoder.decode([Movie].self, from: result)
+                    completion(mvs)
                     //print(responseJSON)
                     //print(json)
                 }
